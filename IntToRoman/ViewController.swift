@@ -19,13 +19,22 @@ class ViewController: UIViewController {
     }
 
     @IBAction func convertButtonPressed() {
-//        if let number = (enterNumberTF.text != nil) {
-//            
-//        }
+        if let text = enterNumberTF.text {
+            if let number = Int(text) {
+                if number > 0 || number < 4000 {
+                    
+                    resultLabel.text = enterNumberTF.text
+                } else {
+                    print("ERROR")
+                }
+                
+            }
+
+        }
 //        guard Int(enterNumberTF.text) > 0 || Int(enterNumberTF.text) < 4000 else {
 //            <#statements#>
 //        }
-        resultLabel.text = enterNumberTF.text
+        
     }
     
 }

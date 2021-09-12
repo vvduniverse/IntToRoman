@@ -21,9 +21,17 @@ class ViewController: UIViewController {
         if let text = enterNumberTF.text, let number = Int(text), number > 0 && number < 4000 {
             resultLabel.text = enterNumberTF.text
         } else {
-            print("ERROR")
+            showAlert(with: "Wrong format of the number!", and: "Please enter number from 1 to 3999!")
             
         }
     }
 }
 
+extension ViewController {
+    private func showAlert(with title: String, and message: String) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "OK", style: .default)
+        alert.addAction(okAction)
+        present(alert, animated: true)
+    }
+}
